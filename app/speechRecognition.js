@@ -10,6 +10,7 @@ recognition.addEventListener('result', onSpeak);
 function onSpeak(event) {
   const guess = event.results[0][0].transcript;
   showGuess(guess);
+  checkGuess(guess);
 }
 
 function showGuess(guess) {
@@ -18,3 +19,5 @@ function showGuess(guess) {
       <span class="box">${guess}</span>
     ` 
 }
+
+recognition.addEventListener('end', () => recognition.start());
