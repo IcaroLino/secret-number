@@ -8,6 +8,7 @@ function checkGuess(guess) {
     document.body.innerHTML = `
         <h2>Você acertou!</h2>
         <h3>O número secreto era ${secretNumber}</h3>
+        <button id="play-again" class="play-btn">Jogar novamente</button>
       `
   } else if (num > secretNumber) {
     guessElement.innerHTML += `
@@ -27,3 +28,7 @@ function isInvalidGuess(num) {
 function isInRange(num) {
   return num > highestValue || num < lowestValue
 }
+
+document.body.addEventListener('click', (event) => {
+  if (event.target.id == 'play-again') window.location.reload();
+});
