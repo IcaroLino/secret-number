@@ -1,9 +1,9 @@
-const lowestValue = 1 ;
-const highestValue = 300;
+const lowestValue = 150 ;
+const highestValue = 600;
 const secretNumber = generateRandomNumber();
 
 function generateRandomNumber() {
-  return Math.floor(Math.random() * (highestValue + 1));
+  return Math.floor(Math.random() * (highestValue - lowestValue + 1) + lowestValue);
 }
 
 document.querySelector('#lowest-value').innerHTML = lowestValue;
